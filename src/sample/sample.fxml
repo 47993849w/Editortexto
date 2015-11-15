@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar fx:id="File" onContextMenuRequested="#copyDisable" onMouseClicked="#copyDisable" prefHeight="25.0" prefWidth="758.0" AnchorPane.bottomAnchor="588.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" onAction="#copyDisable" text="File">
+            <items>
+
+                <MenuItem fx:id="nuev" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+                <MenuItem fx:id="abrir" mnemonicParsing="false" onAction="#abrir" text="Abrir" />
+                <MenuItem fx:id="guardar" mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+                <MenuItem fx:id="guardarc" mnemonicParsing="false" onAction="#guardarComo" text="Guardar como" />
+                <MenuItem fx:id="close" mnemonicParsing="false" onAction="#close1" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" onShowing="#copyDisable" text="Edit">
+            <items>
+              <MenuItem fx:id="copy" mnemonicParsing="false" onAction="#copy" text="Copy" />
+                  <MenuItem fx:id="paste" mnemonicParsing="false" onAction="#paste" text="Paste" />
+                  <MenuItem fx:id="undo" mnemonicParsing="false" onAction="#undo" text="Undo" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Options">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                  <Menu mnemonicParsing="false" text="Font">
+                     <items>
+                        <CheckMenuItem fx:id="Arial" mnemonicParsing="false" onAction="#fuente" text="Arial" />
+                        <CheckMenuItem fx:id="Verdana" mnemonicParsing="false" onAction="#fuente" text="Verdana" />
+                        <CheckMenuItem fx:id="Times" mnemonicParsing="false" onAction="#fuente" text="Times New" />
+                        <CheckMenuItem fx:id="Comic" mnemonicParsing="false" onAction="#fuente" text="Comic Sans" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Size">
+                     <items>
+                        <RadioMenuItem fx:id="dc" mnemonicParsing="true" onAction="#tamanio" text="12" />
+                        <RadioMenuItem fx:id="cc" mnemonicParsing="true" onAction="#tamanio" text="14" />
+                        <RadioMenuItem fx:id="dcs" mnemonicParsing="true" onAction="#tamanio" text="16" />
+                        <RadioMenuItem fx:id="dc2" mnemonicParsing="true" onAction="#tamanio" text="18" />
+                        <RadioMenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </Menu>
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#tamanio" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="textArea1" layoutX="-1.0" layoutY="61.0" prefHeight="544.0" prefWidth="758.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="61.0">
+         <contextMenu>
+            <ContextMenu fx:id="cm">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#copy" text="Copy" />
+                  <MenuItem mnemonicParsing="false" onAction="#paste" text="Paste" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TextArea>
+      <ToolBar layoutY="25.0" prefHeight="25.0" prefWidth="760.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <items>
+            <Button mnemonicParsing="false" text="Copy" onAction="#copy">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="http://emilis.info/files/images/tango-icon-theme/16x16/actions/edit-copy.gif" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button mnemonicParsing="false" text="Paste" onAction="#paste">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="http://files.softicons.com/download/application-icons/must-have-icons-by-visualpharm/png/16/Paste.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button mnemonicParsing="false" text="Undo" onAction="#undo">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="http://megaicons.net/static/img/icons_sizes/8/1331/16/undo-icon.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </items>
+      </ToolBar>
+     
+   </children>
+</AnchorPane>
